@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: 100,
-    height: 150,
+    height: 130,
     elevation: 3,
   },
   cardTextContainer: {

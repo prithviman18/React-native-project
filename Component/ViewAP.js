@@ -27,16 +27,38 @@ export default function ViewAP() {
             <View style={styles.card}>
                 {item.image_url && <Image source={{ uri: item.image_url }} style={styles.image} />}
                 {item.product_name && <Text style={styles.title}>{item.product_name}</Text>}
-                {item.category && item.category.category_name && <Text style={styles.description}>{item.category.category_name}</Text>}
+                {item.cost && <Text style={styles.description}>Cost : $ {item.cost}</Text>}
             </View>
         );
+    };
+
+    const renderTwoProducts = ({ item, index }) => {
+        // Check if index is even or odd to render two cards per row
+        if (index % 2 === 0) {
+            return (
+                <View style={styles.row}>
+                    <View style={styles.cardContainer}>
+                        {renderProduct({ item })}
+                    </View>
+                    {/* Render the next item in the array if available */}
+                    {products[index + 1] && (
+                        <View style={styles.cardContainer}>
+                            {renderProduct({ item: products[index + 1] })}
+                        </View>
+                    )}
+                </View>
+            );
+        } else {
+            // Return null for odd index to avoid rendering a duplicate card
+            return null;
+        }
     };
 
     return (
         <View style={styles.container}>
             <FlatList
                 data={products}
-                renderItem={renderProduct}
+                renderItem={renderTwoProducts}
                 keyExtractor={(item) => item._id}
             />
         </View>
@@ -47,6 +69,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 10,
+    },
+    cardContainer: {
+        width: '48%', // Adjust this value as needed to fit two cards in a row
     },
     card: {
         backgroundColor: '#fff',
@@ -63,8 +93,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     image: {
-        width: 100,
-        height: 100,
+        width: '100%',
+        height: 200,
         borderRadius: 10,
         marginBottom: 10,
     },

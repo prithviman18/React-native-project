@@ -7,14 +7,20 @@ import Home from './Component/Home';
 import Settings from './Component/Settings';
 import Prices from './Component/Prices';
 import Profile from './Component/Profile';
+import InputField from './Component/InputField/InputField';
+
+
+// import AppNavigation from './Component/Index';
 
 
 export default function App() {
   return (
     <View style={style.BG}>
-      <StatusBar backgroundColor='#FFD300' />
+      {/* <StatusBar backgroundColor='#FFD300' />
       <SearchBar />
       <ViewAP />
+      <AppNavigation/> */}
+      <InputField />
     </View>
   );
 }

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     marginTop: 40,
     flexDirection: 'row',
-    alignItems: 'center', // Added to align items vertically
+    alignItems: 'center', 
     backgroundColor: 'red',
     width: '100%',
     paddingHorizontal: 16,

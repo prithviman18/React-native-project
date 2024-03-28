@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Button, Text } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome } from "@expo/vector-icons";
+
 import { AntDesign } from "@expo/vector-icons";
 
 
@@ -55,7 +55,7 @@ const Form = () => {
           placeholderStyle = {styles.placeholderStyle}
           style={styles.input}
           iconColor='red'
-          options={[
+          data={[
             { label: 'Option 1', value: 'option1' },
             { label: 'Option 2', value: 'option2' },
             { label: 'Option 3', value: 'option3' },
@@ -71,7 +71,7 @@ const Form = () => {
           placeholder='Select Sales Person'
           iconColor='red'
           style={styles.input}
-          options={[
+          data={[
             { label: 'Option A', value: 'optionA' },
             { label: 'Option B', value: 'optionB' },
             { label: 'Option C', value: 'optionC' },
@@ -181,7 +181,7 @@ const Form = () => {
           placeholderStyle = {styles.placeholderStyle}
           style={styles.input}
           iconColor='red'
-          options={[
+          data={[
             { label: 'Option 1', value: 'option1' },
             { label: 'Option 2', value: 'option2' },
             { label: 'Option 3', value: 'option3' },

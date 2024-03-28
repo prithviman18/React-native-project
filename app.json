@@ -1,7 +1,12 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "FormUI",
     "slug": "FormUI",
+=======
+    "name": "fetch",
+    "slug": "fetch",
+>>>>>>> 71fb1f66d69f879a9ee9809eab3394b8b67a1623
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
